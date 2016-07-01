@@ -13,10 +13,10 @@ THREAD="-j$(grep -c ^processor /proc/cpuinfo)"
 KERNEL="Image.gz"
 DTBIMAGE="dtb"
 DEFCONFIG="ak_angler_defconfig"
-KERNEL_DIR=`pwd`
+KERNEL_DIR=~/kernel/AK-Angler
 RESOURCE_DIR="$KERNEL_DIR/.."
 ANYKERNEL_DIR="$RESOURCE_DIR/AK-Angler-AnyKernel2"
-TOOLCHAIN_DIR="/home/ak/android"
+TOOLCHAIN_DIR=$RESOURCE_DIR
 
 # Kernel Details
 BASE_AK_VER="AK"
@@ -25,7 +25,7 @@ AK_VER="$BASE_AK_VER$VER"
 
 # Vars
 export LOCALVERSION=~`echo $AK_VER`
-export CROSS_COMPILE="$TOOLCHAIN_DIR/AK-uber64-5.3/bin/aarch64-linux-android-"
+export CROSS_COMPILE="$TOOLCHAIN_DIR/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_BUILD_USER=ak
